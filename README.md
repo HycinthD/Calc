@@ -26,105 +26,104 @@ Publish the website in the given URL.
 
 ## PROGRAM :
 ```
-<!DOCTYPE html>  
-<html lang = "en">  
-<head>  
-<title> Calculator </title>  
-  
-<style>  
-h1 {  
-    text-align: center;  
-    padding: 23px;  
-    background-color: skyblue;  
-    color: black;  
-    }  
-  
-#clear{  
-width: 270px;  
-border: 3px solid gray;  
-    border-radius: 3px;  
-    padding: 20px;  
-    background-color: orange;  
-}  
-  
-.formstyle  
-{  
-width: 300px;  
-height: 530px;  
-margin: auto;  
-border: 3px solid black;  
-border-radius: 5px;  
-padding: 20px;  
-}  
-  
-  
-  
-input  
-{  
-width: 20px;  
-background-color: grey;  
-color: white;  
-border: 3px solid gray;  
-    border-radius: 5px;  
-    padding: 26px;  
-    margin: 5px;  
-    font-size: 15px;  
-}  
-  
-  
-#calc{  
-width: 250px;  
-border: 5px solid black;  
-    border-radius: 3px;  
-    padding: 20px;  
-    margin: auto;  
-}  
-  
-</style>  
-  
-</head>  
-<body>  
-<h1> Hycinth.D 23006688 </h1>  
-<div class= "formstyle">  
-<form name = "form1">  
-      
-    <!-- This input box shows the button pressed by the user in calculator. -->  
-  <input id = "calc" type ="text" name = "answer"> <br> <br>  
-  <!-- Display the calculator button on the screen. -->  
-  <!-- onclick() function display the number prsses by the user. -->  
-  <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">  
-  <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">  
-  <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">  
-   <input type = "button" value = "+" onclick = "form1.answer.value += '+' ">  
-  <br> <br>  
+<html>
+<head>
+
+    <title>Simple Calculator</title>
+    <style>
+        #calc {
+            text-align: center;
+            margin: auto;
+            width: 240px;
+        }
+        .button {
+            margin-left: 550px;
+            margin-right: 550px;
+            padding: 30px;
+            background-color: violet;
+            color: white;
+            border:5px solid cornflowerblue
+        }
+
+        .button input[type="button"] {
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            margin: 0 2px;
+            border: 3px solid burlywood;
+        }
+    </style>
+</head>
+
+<body style="background-color: violet;">
+        <h1 align="center" style="color: aliceblue;">Hycinth D 23006688</h1>
+ <h1 align="center" style="color: aliceblue;">SIMPLE CALCULATOR</h1>
+        <div class="button">
+            <center>
+            
+            <input type="text" id="t1" style="width:270px; height:30px;"><br><br>
+            <input type="button" onkeydown="op(event)" onclick="f('7')" value="7">
+            <input type="button" onkeydown="op(event)" onclick="f('8')" value="8">
+            <input type="button" onkeydown="op(event)" onclick="f('9')" value="9">
+            <input type="button" onkeydown="op(event)" onclick="f('+')" value="+">
+            <input type="button" onkeydown="op(event)" value="C"  onclick="clr()"><br><br>
+
+            <input type="button" onkeydown="op(event)" onclick="f('4')" value="4">
+            <input type="button" onkeydown="op(event)" onclick="f('5')" value="5">
+            <input type="button" onkeydown="op(event)" onclick="f('6')" value="6">
+            <input type="button" onkeydown="op(event)" onclick="f('*')" value="x">
+            <input type="button" onkeydown="op(event)" onclick="f('^0.5')" value="&radic;"><br><br>
     
-  <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">  
-  <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">  
-  <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">  
-  <input type = "button" value = "-" onclick = "form1.answer.value += '-' ">  
-  <br> <br>  
-    
-  <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">  
-  <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">  
-  <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">  
-  <input type = "button" value = "*" onclick = "form1.answer.value += '*' ">  
-  <br> <br>  
-    
-    
-  <input type = "button" value = "/" onclick = "form1.answer.value += '/' ">  
-  <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">  
-    <input type = "button" value = "%" onclick = "form1.answer.value += '%' ">  
-    <!-- When we click on the '=' button, the onclick() shows the sum results on the calculator screen. -->  
-  <input type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) ">  
-  <br>   
-  <!-- Display the Cancel button and erase all data entered by the user. -->  
-  <input type = "button" value = "Clear All" onclick = "form1.answer.value = ' ' " id= "clear" >  
-  <br>   
-    
-</form>  
-</div>  
-</body>  
-</html>  
+            <input type="button" onkeydown="op(event)" onclick="f('1')" value="1">
+            <input type="button" onkeydown="op(event)" onclick="f('2')" value="2">
+            <input type="button" onkeydown="op(event)" onclick="f('3')" value="3">
+            <input type="button" onkeydown="op(event)" onclick="f('-')" value="-">
+            <input type="button" onkeydown="op(event)" onclick="f('/')" value="%"><br><br>
+        
+            <input type="button" onkeydown="op(event)" onclick="f('0')" value="0">
+            <input type="button" onkeydown="op(event)" onclick="f('.')"
+                value=".">
+            
+            <input type="button" onkeydown="op(event)" onclick="f('+')" value="+">
+            <input type="button" onclick="solve()" value="=" style="color: blue; width:110px;font-weight:bolder;">
+        </center>
+        </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.js"></script>
+
+<script>
+    function f(val) {
+        document.getElementById('t1').value += val;
+    }
+
+    function clr() {
+        document.getElementById('t1').value = "";
+    }
+
+    function op(event) {
+        if (event.key == '7' || event.key == '8' || event.key == '9' || event.key == '+' || event.key == '+/-' || event.key == '4' ||
+            event.key == '5' || event.key == '6' || event.key == '*' || event.key == '^0.5' || event.key == '1' ||
+            event.key == '2' || event.key == '3' || event.key == '-' || event.key == '/' || event.key == '0' || event.key == '.') {
+            document.getElementById('t1').value += event.key;
+        }
+    }
+
+    var cal = document.getElementById('calc');
+    cal.onkeyup = function (event) {
+        if (event.keyCode == 13) {
+            console.log("Enter");
+            solve();
+        }
+    }
+
+    function solve() {
+        let x = document.getElementById('t1').value;
+        let y = math.evaluate(x); // Assuming you have included the math.js library
+        document.getElementById('t1').value = y;
+    }
+</script>
+
+</html>
 ```
 
 ## OUTPUT:
