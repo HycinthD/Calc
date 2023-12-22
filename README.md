@@ -60,7 +60,6 @@ Publish the website in the given URL.
  <h1 align="center" style="color: aliceblue;">SIMPLE CALCULATOR</h1>
         <div class="button">
             <center>
-            
             <input type="text" id="t1" style="width:270px; height:30px;"><br><br>
             <input type="button" onkeydown="op(event)" onclick="f('7')" value="7">
             <input type="button" onkeydown="op(event)" onclick="f('8')" value="8">
@@ -127,7 +126,10 @@ Publish the website in the given URL.
 ```
 
 ## OUTPUT:
-![Alt text](Calc.png)
+
+
+![Alt text](<Screenshot (117).png>)
+![Alt text](<Screenshot (118).png>)
 
 
 ## RESULT:
